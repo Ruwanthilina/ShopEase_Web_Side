@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopEase - Modern E-Commerce</title>
+  <link rel="stylesheet" href="C:\Users\2021r\Desktop\ShopEase_Web_Side\css\styles.css">
+</head>
+<body>
+  <!-- Overlay for mobile navigation and cart -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">📦 ShopEase</a>
+      
+      <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+      
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <button id="cart-btn" class="btn-cart">🛒 <span id="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Quality Products for Everyone</h1>
+    <p>Discover our vast collection of products with great prices and fast shipping.</p>
+    <a href="#products" class="btn btn-primary">Shop Now</a>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <h2 class="section-title">Shop by Category</h2>
+    <div class="category-grid">
+      <div class="category-card">
+        <img src="/api/placeholder/300/150?text=Electronics" alt="Electronics">
+        <h3>Electronics</h3>
+      </div>
+      <div class="category-card">
+        <img src="/api/placeholder/300/150?text=Fashion" alt="Fashion">
+        <h3>Fashion</h3>
+      </div>
+      <div class="category-card">
+        <img src="/api/placeholder/300/150?text=Home" alt="Home & Living">
+        <h3>Home & Living</h3>
+      </div>
+      <div class="category-card">
+        <img src="/api/placeholder/300/150?text=Sports" alt="Sports">
+        <h3>Sports & Outdoors</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <h2 class="section-title">Featured Products</h2>
+    
+    <div class="filters">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search products...">
+        <button id="search-btn">🔍</button>
+      </div>
+      
+      <div class="filter-options">
+        <label for="sort-by">Sort by:</label>
+        <select id="sort-by">
+          <option value="featured">Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Highest Rated</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="product-grid" id="product-grid">
+      <!-- Products will be loaded here by JavaScript -->
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <div class="newsletter-container">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Get the latest updates on new products and special promotions!</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>ShopEase</h3>
+        <p>Your one-stop shop for all your needs. Quality products at great prices.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">fb</a>
+          <a href="#" class="social-link">tw</a>
+          <a href="#" class="social-link">ig</a>
+          <a href="#" class="social-link">yt</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Customer Service</h3>
+        <ul class="footer-links">
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Order History</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul class="footer-links">
+          <li>123 Main Street, City</li>
+          <li>Email: support@shopease.com</li>
+          <li>Phone: (123) 456-7890</li>
+          <li>Hours: Mon-Fri 9am-5pm</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2025 ShopEase. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Sidebar -->
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h2>Your Cart (<span id="cart-items-count">0</span>)</h2>
+      <button class="close-cart" id="close-cart">✕</button>
+    </div>
+    
+    <ul class="cart-items" id="cart-items-list">
+      <!-- Cart items will be loaded here by JavaScript -->
+    </ul>
+    
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <script src="C:\Users\2021r\Desktop\ShopEase_Web_Side\js\script.js"></script>
+</body>
+</html>
