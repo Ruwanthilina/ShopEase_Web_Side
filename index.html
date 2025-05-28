@@ -37,58 +37,37 @@
         }
         return gk_fileData[filename] || "";
         }
-        </script>
-
-<!DOCTYPE html>
+        </script><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEase - Your One-Stop Online Shopping Destination</title>
+    <title>ShopEase - Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
     <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">
-                <i class="fas fa-shopping-bag"></i> ShopEase
-            </a>
-            
+    <header>
+        <div class="logo">📦 ShopEase</div>
+        <nav>
+            <div class="menu-toggle">☰</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#products">Products</a></li>
+                <li><a href="#categories">Categories</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            
-            <div class="nav-actions">
-                <div class="search-box">
-                    <input type="text" placeholder="Search products..." id="searchInput">
-                    <i class="fas fa-search"></i>
-                </div>
-                
-                <div class="cart-icon" onclick="toggleCart()">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </div>
-            </div>
         </nav>
+        <div class="cart">🛒 <span id="cart-count">0</span></div>
     </header>
-    
-    <!-- Hero Section -->
-     
-    <section class="hero" id="home">
-        
-        <div class="hero-content">
-            <h1>Welcome to ShopEase</h1>
-            <p>Discover amazing products at unbeatable prices</p>
-            <a href="#products" class="cta-button">Shop Now</a>
-        </div>
-    </section>
-    
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Quality Products for Everyone</h1>
+        <p>Discover our vast collection of products with great prices and fast shipping.</p>
+        <a href="#products" class="btn">Shop Now</a>
+    </section>
 
     <!-- Categories Section -->
     <section id="categories" class="categories">
