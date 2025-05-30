@@ -1,181 +1,301 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEase - Home</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sri Lanka - Beautiful Island</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	
+	
+	<link rel="stylesheet" href="Css.css">
+	
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 25px 0;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #3498db;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2c3e50;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* About Sri Lanka */
+        .about {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-text {
+            flex-basis: 50%;
+            padding-right: 30px;
+        }
+
+        .about-image {
+            flex-basis: 45%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 300px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-item p {
+            padding: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+ }
+
+   .lerning{
+    padding: 50px;
+	
+	table, th, td {
+		border: 1px solid white;
+		border-collapse: collapse;
+
+
+	}
+	th, td {
+		padding: 15px;
+		text-align:left;
+		background-color: #96D4D4;
+	  
+	}	
+	
+}		
+		
+
+
+	.div-float div {
+		  width:33%;
+		  float:left;
+		  display: inline-block;
+		  grid-template-columns: 33% 33% 33%;
+}		
+		
+		
+    </style>
 </head>
 <body>
-    <!-- Header -->
+
+    <!--navigation -->
     <header>
-        <div class="logo">📦 ShopEase</div>
-        <nav>
-            <div class="menu-toggle">☰</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#categories">Categories</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="cart">🛒 <span id="cart-count">0</span></div>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Sri Lanka</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+					<li><a href="#lerning">Lerning</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Quality Products for Everyone</h1>
-        <p>Discover our vast collection of products with great prices and fast shipping.</p>
-        <a href="#products" class="btn">Shop Now</a>
-    </section>
-
-    <!-- Categories Section -->
-    <section id="categories" class="categories">
-        <h2>Shop by Category</h2>
-        <div class="category-grid">
-            <div class="category-card">
-                <img src="electronics.jpg" alt="Electronics">
-                <h3>Electronics</h3>
-            </div>
-            <div class="category-card">
-                <img src="fashion.jpg" alt="Fashion">
-                <h3>Fashion</h3>
-            </div>
-            <div class="category-card">
-                <img src="home.jpg" alt="Home & Living">
-                <h3>Home & Living</h3>
-            </div>
-            <div class="category-card">
-                <img src="sports.jpg" alt="Sports & Outdoors">
-                <h3>Sports & Outdoors</h3>
-            </div>
+    <!-- Hero section -->
+    <section class="hero" id="home">
+        <div class="container">
+		
+		<div class="about-image">
+                    <img src="3.jpg" alt="Sri Lanka Landscape">
+            <h1>Welcome to Sri Lanka</h1>
+            <p>Discover the beauty, culture, and heritage of the Pearl of the Indian Ocean.</p>
+            <a href="#about" class="btn">Learn More</a>
         </div>
     </section>
 
-    <!-- Featured Products Section -->
-    <section id="products" class="products">
-        <h2>Featured Products</h2>
-        <div class="product-controls">
-            <input type="text" id="search" placeholder="🔍 Search products...">
-            <select id="sort">
-                <option value="featured">Featured</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="rated">Highest Rated</option>
-            </select>
-        </div>
-        <div class="product-grid" id="product-grid">
-            <!-- Products will be dynamically added via JavaScript -->
+    <!-- About Sri Lanka -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Sri Lanka</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Sri Lanka is a stunning island nation in South Asia, located in the Indian Ocean. Known for its breathtaking landscapes, rich history, and vibrant culture, it is home to ancient temples, lush tea plantations, and diverse wildlife.</p>
+                    <p>From the iconic Sigiriya Rock Fortress to the serene beaches of Mirissa, Sri Lanka offers a unique mix of adventure, history, and natural beauty. It is also one of the world's leading producers of tea.</p>
+                </div>
+                <div class="about-image">
+                    <img src="sri-lanka-about.jpg" alt="Sri Lanka Landscape">
+                </div>
+            </div>
         </div>
     </section>
+    
 
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <h2>Subscribe to Our Newsletter</h2>
-        <p>Get the latest updates on new products and special promotions!</p>
-        <div class="newsletter-form">
-            <input type="email" id="newsletter-email" placeholder="Enter your email">
-            <button onclick="subscribeNewsletter()">Subscribe</button>
+	
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="sigiriya.jpg" alt="Sigiriya">
+                    <p>Sigiriya Rock Fortress, an ancient marvel and UNESCO World Heritage Site.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="ella.jpg" alt="Ella">
+                    <p>The beautiful hills of Ella, famous for breathtaking train rides.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="mirissa.jpg" alt="Mirissa Beach">
+                    <p>Mirissa Beach, known for its golden sand and whale watching tours.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="yala.jpg" alt="Yala National Park">
+                    <p>Yala National Park, home to elephants, leopards, and exotic wildlife.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>ShopEase</h3>
-                <p>Your one-stop shop for all your needs. Quality products at great prices.</p>
-                <div class="social-links">
-                    <a href="#">fb</a>
-                    <a href="#">tw</a>
-                    <a href="#">ig</a>
-                    <a href="#">yt</a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#categories">Categories</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Customer Service</h3>
-                <ul>
-                    <li><a href="profile.html">My Account</a></li>
-                    <li><a href="orders.html">Order History</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns & Refunds</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>123 Main Street, City</p>
-                <p>Email: info@shopease.com</p>
-                <p>Phone: (123) 456-7890</p>
-                <p>Hours: Mon-Fri 9am-5pm</p>
-            </div>
+        <div class="container">
+            <p>&copy; 2025 Sri Lanka</p>
         </div>
-        <p class="footer-bottom">© 2025 ShopEase. All rights reserved.</p>
     </footer>
 
-    <!-- Cart Modal -->
-    <div id="cart-modal" class="cart-modal">
-        <div class="cart-content">
-            <h2>Your Cart (<span id="modal-cart-count">0</span>)</h2>
-            <span class="close-cart">✕</span>
-            <div id="cart-items"></div>
-            <div class="cart-total">
-                <strong>Total:</strong> $<span id="cart-total">0.00</span>
-            </div>
-            <a href="checkout.html" class="btn">Proceed to Checkout</a>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
