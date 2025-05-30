@@ -18,10 +18,7 @@ function contactUs() {
             alert('Contact Us clicked!');
         }
 
-        function planTrip() {
-            alert('Plan Your Trip clicked!');
-        }
-
+        
 
  // **Close mobile menu when clicking on a link**
 document.addEventListener('DOMContentLoaded', function() {
