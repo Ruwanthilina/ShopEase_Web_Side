@@ -16,18 +16,19 @@
 
 <!--navigation -->
 <header>
-    <div class="container">
-        <nav class="navbar">
-            <div class="logo">Travel Explorer</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#lerning">Lerning</a></li>
-                
-            </ul>
-        </nav>
-    </div>
+<div class="container">
+<nav class="navbar">
+    <div class="logo">Travel Explorer</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Destinations</a></li>
+        <li><a href="#gallery">Packages</a></li>
+        <li><a href="#lerning">Gallery</a></li>
+        <li><a href="#lerning">Contact</a></li>
+        
+    </ul>
+</nav>
+</div>
 </header>
 
 
@@ -37,22 +38,24 @@
     <div class="container">
     
     <div class="about-image">
-                <img src="Media/Hero_main.jpg" alt="Sri Lanka Landscape">
+        <img src="Media/Hero_main.jpg" alt="Sri Lanka Landscape">
         <h1>Welcome to Travel Explorer</h1>
         <p>Discover the beauty, culture, and heritage of the Pearl of the Indian Ocean.</p>
-        <a href="#about" class="btn">Learn More</a>
+        
     </div>
 </section>
 
-   <!-- PoPo button -->
-<button onclick="openPopup()">✨ Show Travel Options</button>
+
+
+<!-- **NEW: Updated popup button with better styling** -->
+<button class="popup-trigger-btn" onclick="openPopup()">Show Travel !</button>
 <!-- Popup Overlay -->
 <div class="popup-overlay" id="popup">
   <div class="popup-content">
-    <h2>🌍 Explore with Us!</h2>
-    <button onclick="location.href='#destinations'">🔍 Browse our Destinations</button>
-    <button onclick="location.href='#packages'">🎒 Check our latest Travel Packages</button>
-    <button onclick="location.href='tel:+1234567890'">📞 Contact us for Recommendations</button>
+    <h2> Explore with Us!</h2>
+    <button onclick="location.href='#destinations'">&#129303; join us</button>
+    <button onclick="location.href='#packages'">&#128217; Check our latest Travel Packages</button>
+    <button onclick="location.href='tel:+1234567890'">&#128222; Contact us for Recommendations</button>
     <button class="close-btn" onclick="closePopup()">Close</button>
   </div>
 </div>
@@ -60,14 +63,15 @@
 
 
 
-    <!-- About Sri Lanka -->
+<!-- About Sri Lanka -->
 <section class="about" id="about">
     <div class="container">
         <h2 class="section-title">About Sri Lanka</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Sri Lanka is a stunning island nation in South Asia, located in the Indian Ocean. Known for its breathtaking landscapes, rich history, and vibrant culture, it is home to ancient temples, lush tea plantations, and diverse wildlife.</p>
-                <p>From the iconic Sigiriya Rock Fortress to the serene beaches of Mirissa, Sri Lanka offers a unique mix of adventure, history, and natural beauty. It is also one of the world's leading producers of tea.</p>
+                
+                <p>Sri Lanka is a stunning island nation in South Asia, located in the Indian Ocean. Known for its breathtaking landscapes, rich history, and vibrant culture, it is home to ancient temples, lush tea plantations, and diverse wildlife.From the iconic Sigiriya Rock Fortress to the serene beaches of Mirissa, Sri Lanka offers a unique mix of adventure, history, and natural beauty. It is also one of the world's leading producers of tea.</p>
+                           
             </div>
             <div class="about-image">
                 <img src="Media/sri-lanka-about.jpg" alt="Sri Lanka Landscape">
@@ -77,14 +81,11 @@
 </section>
 
 
-
-
-
 	
     <!-- Gallery Section -->
 <section class="gallery" id="gallery">
     <div class="container">
-        <h2 class="section-title">Gallery</h2>
+        <h2 class="section-title">Must-Visit Places</h2>
         <div class="gallery-container">
             <div class="gallery-item">
                 <img src="Media/sigiriya.jpg" alt="Sigiriya">
@@ -105,24 +106,113 @@
         </div>
     </div>
 </section>
+<!-- ----------------------packages section------------------------------->
 
+ <section class="packages-section">
 
+<h2 class="section-title">Popular Packages</h2>
 
-
-
-
-
-
-
-
-
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <p>&copy; 2025 Sri Lanka</p>
+<div class="packages-grid">
+<!-- Package 1 -->
+<div class="package-card">
+    <span class="package-icon">🏖️</span>
+    <h3 class="package-title">Beach Escape</h3>
+    <div class="package-details">
+        <span class="package-duration">5 Days</span>
+        <span class="package-price">Rs 5,000</span>
     </div>
-</footer>
+    <ul class="package-features">
+        <li>Luxury beachfront accommodation</li>
+        <li>All meals included</li>
+        <li>Water sports activities</li>
+        <li>Sunset cruise experience</li>
+    </ul>
+</div>
+
+<!-- Package 2  -->
+<div class="package-card">
+<span class="package-icon">🏛️</span>
+<h3 class="package-title">Cultural Heritage</h3>
+<div class="package-details">
+    <span class="package-duration">12 Days</span>
+    <span class="package-price">Rs 12,000</span>
+</div>
+<ul class="package-features">
+    <li>Ancient temple visits</li>
+    <li>Traditional cooking classes</li>
+    <li>Local artisan workshops</li>
+    <li>Historical site guided tours</li>
+</ul>
+</div>
+
+<!-- Package 3 -->
+<div class="package-card">
+<span class="package-icon">⛰️</span>
+<h3 class="package-title">Mountain Adventure</h3>
+<div class="package-details">
+    <span class="package-duration">10 Days</span>
+    <span class="package-price">Rs 7,000</span>
+</div>
+<ul class="package-features">
+    <li>Scenic hiking trails</li>
+    <li>Mountain lodge stays</li>
+    <li>Wildlife spotting tours</li>
+    <li>Tea plantation visits</li>
+</ul>
+</div>
+</div>
+
+
+</section>
+
+<!-- ----------------------------------------------------->
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Travel Explorer</h3>
+                <p>Travel Explorer is your trusted partner in discovering the wonders of Sri Lanka. With years of experience, we offer unforgettable journeys to beaches, hills, cultural sites, and hidden gems across the island. Let us help you create lasting memories with our personalized travel experiences.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#Destinations">Destinations</a>
+                <a href="#Gallery">Gallery  </a>
+                <a href="#Contact">Contact Us</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <a href="#">Help Center</a>
+                <a href="#">FAQs</a>
+                <a href="#">Booking Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Travel Explorer. All rights reserved. | Designed & Developed by Travel Explorer Team.</p>
+        </div>
+    </footer>
+
+
 <script src="javascript.js"></script>
 </body>
 </html>
