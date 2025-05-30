@@ -77,8 +77,8 @@ color: #3498db;
 /* Hero section */
 .hero {
 padding: 25px 0;
-background-color: rgb(5, 155, 241);
-color: white;
+
+color: rgb(10, 10, 10);
 text-align: center;
 }
 
@@ -226,7 +226,7 @@ grid-template-columns: 33% 33% 33%;
 position: fixed;
 bottom: 20px;
 right: 20px;
-background: #007bff;
+background: #24a9e3;
 color: white;
 border: none;
 padding: 15px 20px;
@@ -239,7 +239,7 @@ transition: all 0.3s ease;
 }
 
 .popup-trigger-btn:hover {
-background: #0056b3;
+background: #24a9e3;
 transform: translateY(-2px);
 }
 
@@ -281,7 +281,7 @@ margin: 10px 0;
 padding: 12px;
 border: none;
 border-radius: 8px;
-background: #007bff;
+background: #24a9e3;
 color: white;
 font-size: 16px;
 cursor: pointer;
@@ -289,7 +289,7 @@ transition: background 0.3s ease;
 }
 
 .popup-content button:hover {
-background: #0056b3;
+background: #24a9e3;
 }
 
 .close-btn {
@@ -302,6 +302,7 @@ background: #b52a3a;
 
 
 /* Packages section______  */  
+
 
 .packages-section {
     max-width: 1200px;
@@ -357,7 +358,6 @@ background: #b52a3a;
 }
 
 
-
 .package-details {
     display: flex;
     justify-content: space-between;
@@ -377,7 +377,7 @@ background: #b52a3a;
 .package-price {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #667eea;
+    color: #24a9e3;
 }
 
 .package-features {
@@ -397,7 +397,7 @@ background: #b52a3a;
     content: '✓';
     position: absolute;
     left: 0;
-    color: #667eea;
+    color: #24a9e3;
     font-weight: bold;
 }
 
@@ -418,64 +418,64 @@ background: #b52a3a;
     }
 }
 /*------------------------------------------*/
-        .cta-section {
-            max-width: 800px;
-            margin: 0 auto;
-            color: rgb(0, 0, 0);
-            text-align: center;
-            padding: 60px 30px;
-            border-radius: 15px;
-            box-sizing: border-box;
-        }
+  .cta-section {
+      max-width: 800px;
+      margin: 0 auto;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 60px 30px;
+      border-radius: 15px;
+      box-sizing: border-box;
+  }
 
-        .cta-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
+  .cta-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+  }
 
-        .cta-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
+  .cta-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+  }
 
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
+  .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+  }
 
-        .cta-btn {
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+  .cta-btn {
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+  }
 
-        .btn-primary {
-            background:#24a9e3;
-            color: #fbfbfc;
-        }
+  .btn-primary {
+      background:#24a9e3;
+      color: #fbfbfc;
+  }
 
- 
-        .cta-btn:hover {
-            transform: translateY(-2px);
-        }
 
-        @media (max-width: 600px) {
-            .cta-title {
-                font-size: 2rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+  .cta-btn:hover {
+      transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+      .cta-title {
+          font-size: 2rem;
+      }
+      
+      .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+      }
+  }
 
 /*----------------------------------------Mobile----------------------------------*/
 /* **NEW: RESPONSIVE MEDIA QUERIES** */
