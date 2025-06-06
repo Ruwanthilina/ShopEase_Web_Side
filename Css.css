@@ -22,58 +22,12 @@ padding: 0 15px;
 
 }
 
-/* **NEW: Mobile menu toggle button** */
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #2c3e50;
-    padding: 10px;
+.custom-navbar {
+    
+    box-shadow: 0 4px 10px rgba(90, 88, 88, 0.3); 
 }
 
-/* Header styles */
-header {
-background-color: #fff;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-padding: 10px 0;
-position: sticky;
-top: 20;
-z-index: 100;
-}
-
-.navbar {
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-.logo {
-font-size: 1.8rem;
-font-weight: bold;
-color: #2c3e50;
-}
-
-.nav-links {
-display: flex;
-list-style: none;
-}
-
-.nav-links li {
-margin-left: 20px;
-}
-
-.nav-links a {
-text-decoration: none;
-color: #333;
-font-weight: 500;
-transition: color 0.3s;
-}
-
-.nav-links a:hover {
-color: #3498db;
-}
+ 
 
 /* Hero section */
 .hero {
